@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+
+int gcd(int a, int b) {
+    a = std::abs(a);
+    b = std::abs(b);
+    
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    
+    return a;
+}
+
+int main() {
+    int n, m;
+    std::cout << "Enter numbers: ";
+    std::cin >> n >> m;
+
+    if (n == 0 && m == 0) {
+        std::cout << "GCD is undefined for both numbers being zero." << std::endl;
+        return 1;
+    }
+
+    int result = gcd(n, m);
+
+    std::cout << "The greatest common divisor is " << result << std::endl;
+    return 0;
+}
