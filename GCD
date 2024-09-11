@@ -25,7 +25,8 @@ int main() {
     }
 
     int result = gcd(n, m);
-
+    int res = m * n /result;
     std::cout << "The greatest common divisor is " << result << std::endl;
+    std::cout << "The smallest common m is " << res;
     return 0;
 }
